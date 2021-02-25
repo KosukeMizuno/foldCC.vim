@@ -14,6 +14,7 @@ let g:foldCCnavi_maxchars = get(g:, 'foldCCnavi_maxchars', 60)
 function! FoldCCtext() "{{{
   if g:foldCCtext_enable_autofdc_adjuster && v:foldlevel > &fdc-1
     let &fdc = v:foldlevel + 1
+    redraw!
   endif
   let headline = getline(v:foldstart)
   let head = g:foldCCtext_head=='' ? '' : eval(g:foldCCtext_head)
